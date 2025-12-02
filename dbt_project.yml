@@ -37,8 +37,24 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   sleek_dbt:
-    staging:
-      +materialized: view
-    marts:
+    profit_us:
+      +schema: TRAINING
       +materialized: table
+    profit_uk:
+      +schema: TRAINING
+      +materialized: table
+    profit_india:
+      schema: TRAINING
+      materialized: table
+    customers_stg:
+      schema: L2_PROCESSING
+    orders_stg:
+      schema: L2_PROCESSING
+    orderitems_stg:
+      schema: L2_PROCESSING
+    customerrevenue:
+      materialized: table
+    orders_fact:
+      schema: L2_PROCESSING
+      materialized: table
 
